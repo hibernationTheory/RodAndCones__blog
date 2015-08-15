@@ -1,0 +1,108 @@
+{% extends "./base.html" %}
+
+{% load staticfiles %}
+
+{% block title %} {{ block.super }} | Main {% endblock %}
+
+{% block body %}
+<section>
+	<div class="container-fluid">
+		<div class="row">
+
+			<div class="col-xs-12 col-sm-3 sidebar">
+					<div class="sidebar__logo-area">
+						<a href="{% url 'blog-index' %}">
+							<img class="sidebar__logo-image" src="{% static 'images/logo.png' %}" alt="">
+						</a>
+					</div>
+					
+					<div class="sidebar__categories hidden-xs">
+						{% if categories.opinion %}
+						<a class="sidebar__categories__link" href="{% url 'blog-index' %}categories/opinion">
+							<h5 class="sidebar__categories__header">Opinion</h5>
+						</a>
+						<ul class="sidebar__categories__list">
+							{% for item in categories.opinion %}
+							<li>
+								<a class="sidebar__categories__link" href="{% url 'blog-index' %}{{ item.name }}">
+									<div class="sidebar__categories__link__text">{{ item.title }}</div>
+								</a>
+							</li>
+							{% endfor %}
+						</ul>
+						{% endif %}
+
+						{% if categories.passage %}
+						<a class="sidebar__categories__link" href="{% url 'blog-index' %}categories/passage">
+							<h5 class="sidebar__categories__header">Passage</h5>
+						</a>
+						{% endif %}
+
+						{% if categories.quote %}
+						<a class="sidebar__categories__link" href="{% url 'blog-index' %}categories/quote">
+							<h5 class="sidebar__categories__header">Quote</h5>
+						</a>
+						{% endif %}
+					</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-9 col-sm-offset-3">
+				<div class="posts-container">
+					<div class="row">
+
+						{% for item in page_data.object_list %}
+						<div class="col-sm-10 col-sm-offset-1 ng-cloak">
+							<div class="posts-container__post">
+								<a class="posts-container__post__link" href="{% url 'blog-index' %}/{{ item.name }}">
+									{% if item.category == 'quote' %}
+									<div class="posts-container__post__link content-container-style quote">
+									{% elif item.category == 'passage' %}
+									<div class="posts-container__post__link content-container-style passage">
+									{% else %}
+									<div class="posts-container__post__link content-container-style" >
+									{% endif %}
+										{% if item.header_image %}
+										<div class="post-image">
+											<img src="{{ item.header_image }}" alt="">
+										</div>
+										{% endif %}
+										<div class="post-content">
+											{% autoescape off %}
+											{{ item.short_content }}
+											{% endautoescape %}
+										</div>
+										{% if item.category == 'opinion' %}
+											<div class="post-bottom" style="display:none;">
+												{{ item.date | date:"F j, Y"}}
+											</div>
+										{% endif %}
+									</div>
+								</a>
+							</div>
+						</div>
+						{% endfor %}
+						
+						<div class="col-sm-10 col-sm-offset-1">
+							<div class="paginate">
+						        <span class="prev">
+						        	{% if page_data.has_previous %}
+						        	<a class="content-container-style" href="{{ url }}{{ page_data.previous_page_number }}">&lt;</a>
+						        	{% endif %}
+						        </span>
+						        <span class="next">
+						        	{% if page_data.has_next %}
+						        	<a class="content-container-style" href="{{ url }}{{ page_data.next_page_number }}">&gt;</a>
+							        {% endif %}
+						        </span>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+{% endblock %}

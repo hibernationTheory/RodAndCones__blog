@@ -1,0 +1,40 @@
+{% extends "./base.html" %}
+
+{% load staticfiles %}
+
+{% block title %} {{ block.super }} | CHANGE_ME {% endblock %}
+
+{% block body %}
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1">
+					<div class="post-single-page content-container-style">
+						<div class="post-single-top">
+							{% if data.header_image %}
+								<div class="post-header" style="background:url('{{ data.header_image }}') no-repeat center">
+								</div>
+							{% else %}
+								<div id="post-header" style="height:100%; width:100%"></div>
+							{% endif %}
+							{% if data.category = 'passage' %}
+							<h1 class="post-single-title post-single-title-styled">Passage</h1>
+							{% elif data.category = 'quote' %}
+							<h1 class="post-single-title post-single-title-styled">Quote</h1>
+							{% else %}
+							<h1 class="post-single-title">{{ data.title }}</h1>
+							{% endif %}
+						</div>
+						<div class="post-single-body">
+							{% autoescape off %}
+							{{ data.content }}
+							{% endautoescape %}
+						</div>
+					</div>
+				
+
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
