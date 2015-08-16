@@ -1,12 +1,9 @@
 import datetime
 import json
-import markdown
 import os
 import sys
 import time
 from HTMLParser import HTMLParser
-from django.core.urlresolvers import reverse
-
 
 CURRENT_DIR = os.getcwdu()
 PARENT_DIR = os.path.abspath(os.path.join(CURRENT_DIR, os.pardir))
@@ -20,13 +17,18 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'rodAndCones.settings'
 
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.core import serializers
+from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import Http404
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 
+# 3rd party Python modules
 from bs4 import BeautifulSoup
+import markdown
+import requests
 
+# globals
 PAGES_DIR = settings.BLOG_PAGES_PATH
 
 def get_sorted_files_names_from_path(pages_dir):
@@ -167,7 +169,7 @@ def get_page_content_or_404(name, pages_dir):
 			raise Http404('Page Not Found')
 
 	with open(file_path, 'r') as f:
-		page_string = f.read()
+		page_string = unicode(f.read(), 'utf-8')
 
 	html = markdown.markdown(page_string)
 	html = fix_html_img_tags_static_path(html)
