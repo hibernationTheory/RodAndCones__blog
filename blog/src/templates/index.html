@@ -53,29 +53,24 @@
 						{% for item in page_data.object_list %}
 						<div class="col-sm-10 col-sm-offset-1 ng-cloak">
 							<div class="posts-container__post">
-								<a class="posts-container__post__link" href="{% url 'blog-index' %}/{{ item.name }}">
+								<a class="posts-container__post__link-wrapper" href="{% url 'blog-index' %}/{{ item.name }}">
 									{% if item.category == 'quote' %}
-									<div class="posts-container__post__link content-container-style quote">
+									<div class="posts-container__post__content--quote">
 									{% elif item.category == 'passage' %}
-									<div class="posts-container__post__link content-container-style passage">
+									<div class="posts-container__post__content--passage">
 									{% else %}
-									<div class="posts-container__post__link content-container-style" >
+									<div class="posts-container__post__content" >
 									{% endif %}
 										{% if item.header_image %}
-										<div class="post-image">
+										<div class="posts-container__post__content__image">
 											<img src="{{ item.header_image }}" alt="">
 										</div>
 										{% endif %}
-										<div class="post-content">
+										<div class="posts-container__post__content__body">
 											{% autoescape off %}
 											{{ item.short_content }}
 											{% endautoescape %}
 										</div>
-										{% if item.category == 'opinion' %}
-											<div class="post-bottom" style="display:none;">
-												{{ item.date | date:"F j, Y"}}
-											</div>
-										{% endif %}
 									</div>
 								</a>
 							</div>

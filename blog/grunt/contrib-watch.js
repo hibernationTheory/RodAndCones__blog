@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 grunt.config('watch', {
 	watch_all: {
 		files:['<%= src_path %>/**/*'],
-		tasks:['build']
+		tasks:['serve']
 	}
 });
 
