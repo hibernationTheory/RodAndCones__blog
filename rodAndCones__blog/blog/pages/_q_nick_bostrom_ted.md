@@ -1,0 +1,3 @@
+> We need to think of intelligence as an optimization process, a process that steers the future into a particular set of configurations. A superintelligence is a really strong optimization process. It's extremely good at using available means to achieve a state in which its goal is realized. This means that there is no necessary conenction between being highly intelligent in this sense, and having an objective that we humans would find worthwhile or meaningful.
+
+<cite>Nick Bostrom - [Ted Talk](https://www.ted.com/talks/nick_bostrom_what_happens_when_our_computers_get_smarter_than_we_are/transcript?language=en)</cite>
