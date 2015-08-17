@@ -114,22 +114,29 @@ def generate_page_data(name, pages_dir):
 	content_data['date'] = file_time_formatted
 	content_data['title'] = extract_html_text_from_content(page_content, 'h1')
 	content_data['subtitle'] = extract_html_text_from_content(page_content, 'h2')
+	content_data['cite'] = extract_html_text_from_content(page_content, 'cite')
+
 	first_paragraph = extract_html_text_from_content(page_content, 'p')
 
 	content_data['first_paragraph'] = shorten_text(first_paragraph, 30)
-	content_data['short_content'] = construct_front_page_post_content(content_data['category'], 
+	content_data['short_content'] = construct_front_page_post_content(
+										content_data['category'], 
 										content_data['title'], 
-										content_data['first_paragraph'])
+										content_data['first_paragraph'],
+										content_data['cite']
+									)
 	return content_data
 
-def construct_front_page_post_content(content_type, title, first_paragraph):
+def construct_front_page_post_content(content_type, title, first_paragraph, cite):
 	quote_types = ["quote", "passage"]
 	if content_type not in quote_types:
 		new_title = "<h1>" + title + "</h1>"
 		new_paragraph = "<p>" + first_paragraph + "</p>"
 		content = new_title + new_paragraph
 	else:
-		content = "<blockquote>" + first_paragraph + "</blockquote>"
+		quote = "<blockquote>" + first_paragraph + "</blockquote>"
+		cite = "<cite>" + cite + "</cite>"
+		content = quote + cite
 	return content
 
 
