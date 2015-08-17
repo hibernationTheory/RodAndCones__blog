@@ -9,7 +9,7 @@ import json
 import requests
 import markdown
 
-CURRENT_DIR = os.getcwdu()
+CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
 PAGES_DIR = os.path.join(CURRENT_DIR, 'pages')
 
 GITHUB_USER_NAME = "hibernationTheory"
