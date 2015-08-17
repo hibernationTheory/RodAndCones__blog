@@ -5,8 +5,11 @@ import sys
 import time
 from HTMLParser import HTMLParser
 
-CURRENT_DIR = os.getcwdu()
+# globals
+
+CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
 PARENT_DIR = os.path.abspath(os.path.join(CURRENT_DIR, os.pardir))
+PAGES_DIR = os.path.join(CURRENT_DIR, "pages")
 
 if PARENT_DIR not in sys.path:
 	sys.path.insert(0, PARENT_DIR)
@@ -27,9 +30,6 @@ from django.shortcuts import render_to_response
 from bs4 import BeautifulSoup
 import markdown
 import requests
-
-# globals
-PAGES_DIR = settings.BLOG_PAGES_PATH
 
 def get_sorted_files_names_from_path(pages_dir):
 	unsorted_file_names = os.listdir(pages_dir)
