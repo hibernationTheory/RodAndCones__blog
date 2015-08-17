@@ -42,6 +42,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+#files to ignore
+__test__.py
+
 #dir to ignore
 env
 reference
