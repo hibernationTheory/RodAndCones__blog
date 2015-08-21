@@ -1,17 +1,17 @@
 /* variable declarations for paths in use */ 
 
-var src_path = 'src/';
+var src_path = 'blog/';
 var dist_path = 'dist/';
 
-var src_js_path = src_path + 'static/js/';
-var dist_js_path = dist_path + 'static/js/';
+var src_js_path = src_path + 'static/blog/js/';
+var dist_js_path = dist_path + 'static/blog/js/';
 
-var src_styles_path = 'src/static/styles';
-var src_styles_sass_path = 'src/static/styles/sass';
-var src_styles_css_path = 'src/static/styles/css';
-var dist_styles_path = 'dist/static/styles';
-var dist_styles_sass_path = 'dist/static/styles/sass';
-var dist_styles_css_path = 'dist/static/styles/css';
+var src_styles_path = src_path + 'static/blog/styles';
+var src_styles_sass_path = src_path + 'static/blog/styles/sass';
+var src_styles_css_path = src_path + 'static/blog/styles/css';
+var dist_styles_path = 'dist/static/blog/styles';
+var dist_styles_sass_path = 'dist/static/blog/styles/sass';
+var dist_styles_css_path = 'dist/static/blog/styles/css';
 
 module.exports = function(grunt) {
 	grunt.initConfig({
