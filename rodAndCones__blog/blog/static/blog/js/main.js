@@ -1,7 +1,7 @@
 var id = "post-header";
 var el = document.getElementById(id);
 if (el) {
-	var path = '/static/js/particles.json'
+	var path = '/static/js/blog/particles.json'
 	particlesJS.load(id, path);
 }
 
