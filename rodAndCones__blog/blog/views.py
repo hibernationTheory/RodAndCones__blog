@@ -241,7 +241,7 @@ def fix_html_img_tags_static_path(html):
 		return html
 
 def index(request, pagenum=1, category='all', pages_dir=PAGES_DIR):
-	print(index)
+	page_amount = 5
 	category_names = ['quote', 'passage', 'opinion', 'all']
 	if category not in category_names:
 		raise Http404('Page Not Found')
@@ -255,7 +255,7 @@ def index(request, pagenum=1, category='all', pages_dir=PAGES_DIR):
 	filtered_page_data = filter_pages_by_category(page_data, category)
 	categories = get_all_categories(page_data)
 
-	paginated_page_data = Paginator(filtered_page_data, 3)
+	paginated_page_data = Paginator(filtered_page_data, 5)
 	try:
 		page = paginated_page_data.page(pagenum)
 	except PageNotAnInteger:

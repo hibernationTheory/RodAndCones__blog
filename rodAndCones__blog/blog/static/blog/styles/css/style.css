@@ -40,13 +40,16 @@ a {
   background-color: black;
   color: white;
   position: absolute;
-  height: 1000px; }
+  height: 1700px; }
 
 @media (max-width: 768px) {
   .sidebar {
     height: 100px; } }
+@media (max-width: 768px) {
+  .sidebar {
+    height: 100px; } }
 .sidebar__categories {
-  padding-left: 80px;
+  padding-left: 20px;
   padding-right: 20px; }
 
 .sidebar__categories__link {
@@ -56,6 +59,7 @@ a {
 .sidebar__categories__link__text {
   font-size: 0.9em;
   margin: 0px;
+  margin-bottom: 5px;
   color: #cb19c9; }
 
 .sidebar__categories__list {
@@ -68,11 +72,12 @@ a {
 .sidebar__logo-area {
   text-align: center; }
 
-.sidebar__logo-image {
-  padding-top: 10%;
-  padding-bottom: 5%;
-  width: 60%; }
-
+@media (min-width: 769px) {
+  .sidebar__logo-image {
+    padding-left: 20px;
+    padding-right: 60px;
+    padding-top: 20px;
+    margin-bottom: 20px; } }
 @media (max-width: 768px) {
   .sidebar__logo-image {
     padding-top: 10px;
@@ -113,12 +118,15 @@ a {
   -webkit-box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
   transform: scale(1.01); }
 
-@media (max-width: 768px) {
-  .posts-container__post__content, .posts-container__post__content--quote, .posts-container__post__content--passage {
-    min-height: 300px; } }
 @media (max-width: 1200px) {
   .posts-container__post__content, .posts-container__post__content--quote, .posts-container__post__content--passage {
     min-height: 250px; } }
+@media (max-width: 768px) {
+  .posts-container__post__content, .posts-container__post__content--quote, .posts-container__post__content--passage {
+    min-height: 300px; } }
+@media (max-width: 480px) {
+  .posts-container__post__content, .posts-container__post__content--quote, .posts-container__post__content--passage {
+    min-height: 350px; } }
 .posts-container__post__content--quote {
   background-color: #000;
   color: #ccc;
@@ -144,6 +152,9 @@ a {
   padding-left: 35px;
   padding-right: 35px;
   padding-bottom: 37px; }
+  @media (max-width: 768px) {
+    .posts-container__post__content__body h1 {
+      font-size: 1.6em; } }
 
 /* YET TO BE BEMMED */
 .featured-title {
@@ -204,6 +215,12 @@ a {
   padding-right: 100px;
   padding-top: 40px;
   padding-bottom: 60px; }
+  @media (max-width: 768px) {
+    .post-single-body {
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 30px;
+      padding-bottom: 60px; } }
 
 .post-single-body h1 {
   text-align: center;
