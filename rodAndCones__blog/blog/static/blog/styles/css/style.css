@@ -1,4 +1,7 @@
 /* MAIN */
+html {
+  font-size: 10px; }
+
 body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -7,11 +10,15 @@ body {
   background-color: #D5D5D5;
   /* #E9EAED */
   color: #666;
-  line-height: 1.7em; }
+  font-size: 1.6rem;
+  line-height: 1.5em; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 900;
   color: #666; }
+
+h1 {
+  font-size: 3rem; }
 
 blockquote {
   border: none;
@@ -29,7 +36,7 @@ img {
   max-width: 100%; }
 
 p {
-  margin-bottom: 20px; }
+  margin-bottom: 1.5em; }
 
 a {
   text-decoration: none;
@@ -39,17 +46,15 @@ a {
 .sidebar {
   background-color: black;
   color: white;
-  position: absolute;
+  position: fixed;
   height: 1700px; }
 
 @media (max-width: 768px) {
   .sidebar {
-    height: 100px; } }
-@media (max-width: 768px) {
-  .sidebar {
+    position: absolute;
     height: 100px; } }
 .sidebar__categories {
-  padding-left: 20px;
+  padding-left: 30px;
   padding-right: 20px; }
 
 .sidebar__categories__link {
@@ -84,7 +89,8 @@ a {
     width: 30%; } }
 /* POSTS AREA */
 .posts-container {
-  padding-top: 40px; }
+  padding-top: 40px;
+  padding-bottom: 40px; }
 
 @media (max-width: 768px) {
   .posts-container {
@@ -104,8 +110,8 @@ a {
 
 .posts-container__post__content, .posts-container__post__content--quote, .posts-container__post__content--passage {
   position: relative;
-  margin-bottom: 32px;
-  height: 200px;
+  margin-bottom: 20px;
+  height: 180px;
   background-color: #fff;
   border-bottom: 2px solid rgba(0, 0, 0, 0.25);
   -webkit-transition-duration: 0.3s;
@@ -120,17 +126,19 @@ a {
 
 @media (max-width: 1200px) {
   .posts-container__post__content, .posts-container__post__content--quote, .posts-container__post__content--passage {
-    min-height: 250px; } }
+    min-height: 234px; } }
 @media (max-width: 768px) {
   .posts-container__post__content, .posts-container__post__content--quote, .posts-container__post__content--passage {
-    min-height: 300px; } }
+    min-height: 252.0px; } }
 @media (max-width: 480px) {
   .posts-container__post__content, .posts-container__post__content--quote, .posts-container__post__content--passage {
-    min-height: 350px; } }
+    min-height: 270px; } }
 .posts-container__post__content--quote {
   background-color: #000;
   color: #ccc;
-  padding-top: 30px; }
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 198.0px; }
   .posts-container__post__content--quote blockquote {
     border-left: none;
     font-size: 1.33em;
@@ -139,7 +147,9 @@ a {
     text-align: right; }
 
 .posts-container__post__content--passage {
-  padding-top: 20px; }
+  padding-top: 20px;
+  padding-bottom: 30px;
+  height: 198.0px; }
   .posts-container__post__content--passage blockquote {
     border-left: 5px solid #eee;
     padding-top: 20px;
