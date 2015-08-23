@@ -1,0 +1,3 @@
+>"You have to ignore low-hanging fruit, which is a little tricky," she said. "I'm not sure if it's the best way of doing things, actually — you're torturing yourself along the way." But she enjoys it, she said. "Life isn’t supposed to be easy."
+
+<cite> Maryam Mizakhani - from A Tenacious Explorer of Abstract Surfaces [Link](https://www.quantamagazine.org/20140812-a-tenacious-explorer-of-abstract-surfaces/) </cite>
