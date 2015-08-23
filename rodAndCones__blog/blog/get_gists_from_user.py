@@ -68,5 +68,5 @@ def main():
 	gist_data_all = get_gist_data_from_github()
 	get_content_data_for_all_gists(gist_data_all)
 
-main()
-	
+if __name__ == '__main__':
+	main()
