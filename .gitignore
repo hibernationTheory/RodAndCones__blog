@@ -64,3 +64,4 @@ __reference__
 #others
 *.pyc
 *.psd
+config_private.json
