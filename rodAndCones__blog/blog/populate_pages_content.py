@@ -4,4 +4,4 @@ import get_images
 
 git_pull_origin.main()
 get_gists.main()
-get_images()
+get_images.main()
